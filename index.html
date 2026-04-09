@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stoney Lee Press LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a0a0f;
+      --paper: #f5f2eb;
+      --cream: #ede9df;
+      --gold: #c9a84c;
+      --gold-dim: #a08030;
+      --muted: #6b6558;
+      --border: rgba(201,168,76,0.2);
+      --border-soft: rgba(0,0,0,0.08);
+      --applynex: #c9a84c;
+      --forkcast: #34d399;
+      --rantlogic: #5E5CE6;
+      --stoney: #c9a84c;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color: var(--paper); font-family: 'DM Mono', monospace; font-size: 14px; line-height: 1.7; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(10,10,15,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--paper); }
+    .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 48px 80px; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%), radial-gradient(ellipse 30% 40% at 20% 80%, rgba(94,92,230,0.05) 0%, transparent 60%), radial-gradient(ellipse 25% 30% at 80% 20%, rgba(52,211,153,0.04) 0%, transparent 60%); }
+    .hero-rule { width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--gold)); margin: 0 auto 32px; animation: fadeDown 1s ease both; }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; animation: fadeUp 0.8s ease 0.2s both; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 8vw, 96px); font-weight: 300; line-height: 1.0; letter-spacing: -0.01em; color: var(--paper); margin-bottom: 8px; animation: fadeUp 0.8s ease 0.3s both; }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px, 3vw, 26px); font-weight: 300; color: var(--muted); margin-bottom: 40px; letter-spacing: 0.05em; animation: fadeUp 0.8s ease 0.4s both; }
+    .hero-desc { max-width: 520px; font-size: 13px; color: rgba(245,242,235,0.5); line-height: 1.8; margin: 0 auto 48px; animation: fadeUp 0.8s ease 0.5s both; }
+    .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.8s ease 0.6s both; }
+    .btn-primary { background: var(--gold); color: var(--ink); border: none; padding: 12px 28px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .btn-primary:hover { background: var(--gold-dim); }
+    .btn-ghost { background: transparent; color: var(--paper); border: 1px solid var(--border); padding: 12px 28px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    section { position: relative; z-index: 1; padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 300; line-height: 1.1; color: var(--paper); margin-bottom: 48px; }
+    .section-divider { width: 100%; height: 1px; background: var(--border); margin: 0 auto; }
+    #products { padding-top: 60px; }
+    .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .product-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border-soft); padding: 40px; transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden; }
+    .product-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--accent-color, var(--gold)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .product-card:hover::before { transform: scaleX(1); }
+    .product-card:hover { background: rgba(255,255,255,0.04); }
+    .product-card.applynex { --accent-color: var(--applynex); }
+    .product-card.forkcast { --accent-color: var(--forkcast); }
+    .product-card.rantlogic { --accent-color: var(--rantlogic); }
+    .product-card.stoney { --accent-color: var(--stoney); }
+    .product-tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 8px; border: 1px solid; margin-bottom: 20px; }
+    .product-card.applynex .product-tag { color: var(--applynex); border-color: rgba(201,168,76,0.3); }
+    .product-card.forkcast .product-tag { color: var(--forkcast); border-color: rgba(52,211,153,0.3); }
+    .product-card.rantlogic .product-tag { color: var(--rantlogic); border-color: rgba(94,92,230,0.3); }
+    .product-card.stoney .product-tag { color: var(--stoney); border-color: rgba(201,168,76,0.3); }
+    .product-name { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: var(--paper); margin-bottom: 10px; }
+    .product-desc { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
+    .product-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    .product-link { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+    .product-link:hover { color: var(--paper); }
+    .product-link::after { content: '→'; }
+    .legal-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(10,10,15,0.95); backdrop-filter: blur(8px); overflow-y: auto; padding: 80px 24px; }
+    .legal-overlay.active { display: block; }
+    .legal-panel { max-width: 780px; margin: 0 auto; background: rgba(255,255,255,0.03); border: 1px solid var(--border); padding: 60px; position: relative; animation: slideUp 0.3s ease; }
+    .legal-close { position: absolute; top: 24px; right: 24px; background: transparent; border: 1px solid var(--border); color: var(--muted); width: 36px; height: 36px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-family: 'DM Mono', monospace; }
+    .legal-close:hover { color: var(--paper); border-color: var(--paper); }
+    .legal-eyebrow { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .legal-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--paper); margin-bottom: 8px; }
+    .legal-product { font-size: 11px; color: var(--muted); margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .legal-body h2 { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; color: var(--paper); margin: 32px 0 12px; letter-spacing: 0.05em; }
+    .legal-body p, .legal-body li { font-size: 13px; color: rgba(245,242,235,0.6); line-height: 1.9; margin-bottom: 12px; }
+    .legal-body ul { padding-left: 20px; }
+    .legal-body a { color: var(--gold); }
+    #contact { border-top: 1px solid var(--border-soft); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-info p { font-size: 13px; color: var(--muted); line-height: 1.9; margin-bottom: 32px; }
+    .contact-detail { display: flex; flex-direction: column; gap: 12px; }
+    .contact-item { display: flex; align-items: center; gap: 12px; font-size: 12px; color: rgba(245,242,235,0.5); }
+    .contact-item strong { color: var(--paper); min-width: 60px; font-weight: 400; }
+    .contact-item a { color: var(--gold); text-decoration: none; }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .form-input, .form-select, .form-textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border-soft); color: var(--paper); padding: 12px 16px; font-family: 'DM Mono', monospace; font-size: 13px; outline: none; transition: border-color 0.2s; appearance: none; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+    .form-select option { background: #0a0a0f; }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit { background: var(--gold); color: var(--ink); border: none; padding: 14px 32px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; width: 100%; transition: background 0.2s; margin-top: 8px; }
+    .form-submit:hover { background: var(--gold-dim); }
+    .form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .form-success { display: none; text-align: center; padding: 32px; border: 1px solid rgba(52,211,153,0.3); color: #34d399; font-size: 13px; }
+    #press { border-top: 1px solid var(--border-soft); }
+    .press-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 48px; }
+    .press-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border-soft); padding: 32px; }
+    .press-stat { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+    .press-label { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; }
+    .bio-block { margin-top: 48px; display: grid; grid-template-columns: 1fr 2fr; gap: 48px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .bio-meta { font-size: 11px; color: var(--muted); line-height: 2; }
+    .bio-meta strong { color: var(--paper); display: block; margin-bottom: 4px; font-family: 'Syne', sans-serif; font-size: 13px; }
+    .bio-text { font-size: 13px; color: rgba(245,242,235,0.65); line-height: 1.9; }
+    .bio-text p { margin-bottom: 16px; }
+    footer { border-top: 1px solid var(--border-soft); padding: 48px; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 16px; }
+    .footer-legal { font-size: 11px; color: rgba(107,101,88,0.6); line-height: 2; }
+    .footer-legal a { color: var(--muted); text-decoration: none; }
+    .footer-legal a:hover { color: var(--paper); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; } .nav-links { display: none; } section { padding: 60px 24px; } .hero { padding: 100px 24px 60px; } .products-grid { grid-template-columns: 1fr; } .contact-grid { grid-template-columns: 1fr; } .press-grid { grid-template-columns: 1fr 1fr; } .bio-block { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } .legal-panel { padding: 40px 24px; } footer { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="#top">Stoney Lee Press</a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#" onclick="openFeedback(); return false;">Feedback</a></li>
+  </ul>
+</nav>
+<div id="top" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-rule"></div>
+  <div class="hero-eyebrow">Ridgefield, Connecticut &middot; Est. 2024</div>
+  <h1 class="hero-title">Stoney Lee<br /><em>Press LLC</em></h1>
+  <p class="hero-sub">Independent publisher &amp; software studio</p>
+  <p class="hero-desc">Building tools that work, stories that linger, and software that respects the people who use it. All products are designed, built, and published independently.</p>
+  <div class="hero-cta">
+    <a href="#products" class="btn-primary">Our Products</a>
+    <a href="#contact" class="btn-ghost">Get in Touch</a>
+  </div>
+</div>
+<div class="section-divider" style="max-width:1100px;margin:0 auto;"></div>
+<section id="products">
+  <div class="section-label">Portfolio</div>
+  <h2 class="section-title">What We Build</h2>
+  <div class="products-grid">
+    <div class="product-card applynex">
+      <div class="product-tag">Web App &middot; AI</div>
+      <div class="product-name">ApplyNex</div>
+      <div class="product-desc">AI-powered job search platform. Resume tailoring, cover letter generation, ATS scoring, interview prep, and application tracking &mdash; all in one dashboard.</div>
+      <div class="product-links">
+        <a href="https://applynex.ai" target="_blank" class="product-link" style="color:var(--applynex);">applynex.ai</a>
+        <a href="#" onclick="openLegal('privacy','applynex'); return false;" class="product-link">Privacy Policy</a>
+        <a href="#" onclick="openLegal('terms','applynex'); return false;" class="product-link">Terms</a>
+      </div>
+    </div>
+    <div class="product-card forkcast">
+      <div class="product-tag">iOS App &middot; Nutrition</div>
+      <div class="product-name">ForkCast</div>
+      <div class="product-desc">Smart recipe keeper and nutrition tracker for iOS. AI meal planning, plate scanning, GLP-1 guidance, sourdough tools, and a full food diary with widget support.</div>
+      <div class="product-links">
+        <a href="https://forkcastrecipes.com" target="_blank" class="product-link" style="color:var(--forkcast);">forkcastrecipes.com</a>
+        <a href="#" onclick="openLegal('privacy','forkcast'); return false;" class="product-link">Privacy Policy</a>
+        <a href="#" onclick="openLegal('terms','forkcast'); return false;" class="product-link">Terms</a>
+      </div>
+    </div>
+    <div class="product-card rantlogic">
+      <div class="product-tag">iOS App &middot; Automation</div>
+      <div class="product-name">RantLogic</div>
+      <div class="product-desc">Converts spoken or typed frustrations into Apple Shortcuts automations via a compliant 3-tap handoff. Rant, automate, resolve.</div>
+      <div class="product-links">
+        <a href="https://rantlogic.ai" target="_blank" class="product-link" style="color:var(--rantlogic);">rantlogic.ai</a>
+        <a href="#" onclick="openLegal('privacy','rantlogic'); return false;" class="product-link">Privacy Policy</a>
+        <a href="#" onclick="openLegal('terms','rantlogic'); return false;" class="product-link">Terms</a>
+      </div>
+    </div>
+    <div class="product-card stoney">
+      <div class="product-tag">Novel &middot; Psychological Thriller</div>
+      <div class="product-name">The Other Side of Me</div>
+      <div class="product-desc">A psychological thriller published under Stoney Lee Press LLC. Available in paperback, hardcover, Kindle, and Apple Books. Audiobook in production.</div>
+      <div class="product-links">
+        <a href="https://www.amazon.com/dp/B0D9QFKJ2M" target="_blank" class="product-link" style="color:var(--stoney);">Amazon</a>
+        <a href="https://books.apple.com" target="_blank" class="product-link" style="color:var(--stoney);">Apple Books</a>
+        <a href="#press" class="product-link">Press Kit</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-divider" style="max-width:1100px;margin:0 auto;"></div>
+<section id="press">
+  <div class="section-label">Press Kit</div>
+  <h2 class="section-title">About the Founder</h2>
+  <div class="press-grid">
+    <div class="press-card"><div class="press-stat">4</div><div class="press-label">Products in market</div></div>
+    <div class="press-card"><div class="press-stat">15+</div><div class="press-label">Years in tech &amp; sales</div></div>
+    <div class="press-card"><div class="press-stat">2024</div><div class="press-label">Studio founded</div></div>
+  </div>
+  <div class="bio-block">
+    <div class="bio-meta">
+      <strong>David Cordisco</strong>Founder &amp; Publisher<br /><br />
+      <strong>Location</strong>Ridgefield, CT<br /><br />
+      <strong>Background</strong>Apple &middot; Lumen &middot; Frontier<br /><br />
+      <strong>Education</strong>MPA, Business Intelligence &amp; Data Analytics (2026)<br /><br />
+      <strong>Media inquiries</strong><a href="mailto:hello@stoneyleepress.com" style="color:var(--gold);">hello@stoneyleepress.com</a>
+    </div>
+    <div class="bio-text">
+      <p>David Cordisco is the founder of Stoney Lee Press LLC, an independent publishing and software studio based in Ridgefield, Connecticut. With over 15 years of experience across Apple, Lumen Technologies, and Frontier Communications in sales operations and revenue leadership, he applies that same precision and systems thinking to the products he builds independently.</p>
+      <p>Stoney Lee Press publishes software and literature with a shared philosophy: tools should be honest about what they do, and stories should earn their endings. ApplyNex and ForkCast are both live products with active users. RantLogic is in development. <em>The Other Side of Me</em> is his debut psychological thriller, available across all major retail platforms.</p>
+      <p>Cordisco serves as Board Treasurer for Meals on Wheels Ridgefield and on a local Board of Education. He is completing a Master of Public Administration with a concentration in Business Intelligence and Data Analytics.</p>
+    </div>
+  </div>
+</section>
+<div class="section-divider" style="max-width:1100px;margin:0 auto;"></div>
+<section id="contact">
+  <div class="section-label">Get in Touch</div>
+  <h2 class="section-title">Contact &amp; Feedback</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p>For support, business inquiries, press requests, or general questions about any Stoney Lee Press product &mdash; reach out directly. We respond to every message.</p>
+      <div class="contact-detail">
+        <div class="contact-item"><strong>Email</strong> <a href="mailto:hello@stoneyleepress.com">hello@stoneyleepress.com</a></div>
+        <div class="contact-item"><strong>ApplyNex</strong> <a href="mailto:hello@applynex.ai">hello@applynex.ai</a></div>
+        <div class="contact-item"><strong>ForkCast</strong> <a href="mailto:hello@forkcastrecipes.com">hello@forkcastrecipes.com</a></div>
+        <div class="contact-item"><strong>Location</strong> <span>Ridgefield, CT 06877</span></div>
+        <div class="contact-item"><strong>Entity</strong> <span>Stoney Lee Press LLC (CT)</span></div>
+      </div>
+    </div>
+    <div class="contact-form-wrap">
+      <div id="feedback-form">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" id="f-name" placeholder="Your name" /></div>
+          <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="f-email" placeholder="you@email.com" /></div>
+        </div>
+        <div class="form-group"><label class="form-label">Product</label><select class="form-select" id="f-product"><option value="">Select a product...</option><option value="applynex">ApplyNex</option><option value="forkcast">ForkCast</option><option value="rantlogic">RantLogic</option><option value="book">The Other Side of Me</option><option value="general">General / Other</option></select></div>
+        <div class="form-group"><label class="form-label">Type</label><select class="form-select" id="f-type"><option value="feedback">Feedback</option><option value="support">Support Request</option><option value="press">Press Inquiry</option><option value="business">Business</option><option value="other">Other</option></select></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" id="f-message" placeholder="Tell us what's on your mind..."></textarea></div>
+        <button class="form-submit" onclick="submitFeedback()">Send Message</button>
+      </div>
+      <div class="form-success" id="form-success">&#10003; Message received. We'll be in touch shortly.</div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-logo">Stoney Lee Press</div>
+  <div class="footer-legal">
+    &copy; 2024&ndash;2026 Stoney Lee Press LLC &middot; Ridgefield, Connecticut &middot; All rights reserved.<br />
+    <a href="#" onclick="openLegal('privacy','general'); return false;">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="#" onclick="openLegal('terms','general'); return false;">Terms of Service</a> &nbsp;&middot;&nbsp;
+    <a href="mailto:hello@stoneyleepress.com">hello@stoneyleepress.com</a>
+  </div>
+</footer>
+<div class="legal-overlay" id="legal-overlay" onclick="closeLegalOnBg(event)">
+  <div class="legal-panel">
+    <button class="legal-close" onclick="closeLegal()">&#10005;</button>
+    <div class="legal-eyebrow" id="legal-eyebrow">Stoney Lee Press LLC</div>
+    <h2 class="legal-title" id="legal-title">Privacy Policy</h2>
+    <div class="legal-product" id="legal-product">Effective date: April 9, 2026 &middot; Ridgefield, CT</div>
+    <div class="legal-body" id="legal-body"></div>
+  </div>
+</div>
+<script>
+const LEGAL = {
+  privacy: {
+    general: { title: 'Privacy Policy', product: 'Stoney Lee Press LLC — All Products · Effective April 9, 2026', body: '<h2>1. Who We Are</h2><p>Stoney Lee Press LLC is an independent publishing and software studio based in Ridgefield, Connecticut. This policy covers ApplyNex, ForkCast, RantLogic, and stoneyleepress.com.</p><h2>2. Information We Collect</h2><p>We collect information you provide directly (name, email, resume content, feedback), usage data generated through product use, and standard technical data (IP address, browser type, device identifiers).</p><h2>3. How We Use Your Information</h2><p>We use collected data to provide and improve our services, respond to support requests, send transactional emails, and generate anonymized analytics. We do not sell your personal data.</p><h2>4. Data Storage & Security</h2><p>Data is stored using Supabase, Firebase, and Vercel with encryption in transit (TLS) and at rest.</p><h2>5. Third-Party Services</h2><p>Our products integrate with Stripe, Anthropic, Resend, SerpAPI, RapidAPI, ElevenLabs, and Unsplash. Each maintains their own privacy practices.</p><h2>6. Your Rights</h2><p>You may request access, correction, or deletion of your data at any time by contacting <a href="mailto:hello@stoneyleepress.com">hello@stoneyleepress.com</a>. Deletion requests are processed within 30 days.</p><h2>7. Contact</h2><p>Stoney Lee Press LLC · Ridgefield, CT 06877 · <a href="mailto:hello@stoneyleepress.com">hello@stoneyleepress.com</a></p>' },
+    applynex: { title: 'Privacy Policy', product: 'ApplyNex (applynex.ai) · Effective April 9, 2026', body: '<h2>1. What ApplyNex Collects</h2><p>ApplyNex collects your email, account credentials, resume content, job applications and notes, AI interaction logs, and payment confirmation (via Stripe).</p><h2>2. How We Use Your Data</h2><p>Your resume and job data are used solely to power ApplyNex features. We do not share, sell, or use your resume to train AI models. AI processing uses the Anthropic API under a zero data retention agreement.</p><h2>3. Data Retention</h2><p>Data is retained while your account is active. Upon deletion, all personal data is purged within 30 days.</p><h2>4. Pro Subscription</h2><p>Subscriptions are managed via Stripe. ApplyNex receives only confirmation of subscription status.</p><h2>5. Contact</h2><p><a href="mailto:hello@applynex.ai">hello@applynex.ai</a></p>' },
+    forkcast: { title: 'Privacy Policy', product: 'ForkCast iOS App · Effective April 9, 2026', body: '<h2>1. What ForkCast Collects</h2><p>ForkCast collects your email and Firebase credentials, food diary entries, weight logs, recipe data, plate scan images (not stored after processing), and Pro subscription status.</p><h2>2. On-Device & CloudKit Data</h2><p>Recipe and diary data is stored using SwiftData on your device and synced via CloudKit to your personal iCloud account. We do not have direct access to your CloudKit data.</p><h2>3. AI Processing</h2><p>AI features send anonymized data to the Anthropic API. Images are not stored after processing completes.</p><h2>4. Health Data</h2><p>ForkCast does not integrate with Apple Health. We do not sell or share health-related data.</p><h2>5. Contact</h2><p><a href="mailto:hello@forkcastrecipes.com">hello@forkcastrecipes.com</a></p>' },
+    rantlogic: { title: 'Privacy Policy', product: 'RantLogic iOS App · Effective April 9, 2026', body: '<h2>1. What RantLogic Collects</h2><p>RantLogic collects text or voice input for automation generation, your email if you create an account, and basic usage analytics. Voice input is processed on-device and not transmitted to our servers.</p><h2>2. Automation Output</h2><p>Generated Shortcuts files are not stored after delivery. Your automation history is stored locally on your device.</p><h2>3. AI Processing</h2><p>Text input is sent to the Anthropic API. We do not log or retain rant content beyond the current session.</p><h2>4. Contact</h2><p><a href="mailto:hello@stoneyleepress.com">hello@stoneyleepress.com</a></p>' }
+  },
+  terms: {
+    general: { title: 'Terms of Service', product: 'Stoney Lee Press LLC — All Products · Effective April 9, 2026', body: '<h2>1. Acceptance</h2><p>By accessing any Stoney Lee Press LLC product or service, you agree to these Terms. If you do not agree, discontinue use immediately.</p><h2>2. Use of Services</h2><p>You agree to use our services only for lawful purposes. You may not harass or defraud others, reverse-engineer our software, misuse AI features for harmful content, or share account credentials.</p><h2>3. Intellectual Property</h2><p>All software, design, and branding is our exclusive property. You retain ownership of content you create within our platforms and grant us a limited license to process it to deliver services.</p><h2>4. Disclaimers</h2><p>Services are provided as-is. We make no guarantees regarding job placement, nutrition outcomes, or automation results. ForkCast is not a medical device.</p><h2>5. Limitation of Liability</h2><p>Our total liability is limited to amounts paid by you in the 90 days preceding any claim.</p><h2>6. Governing Law</h2><p>These terms are governed by Connecticut law. Disputes resolved in Fairfield County, CT.</p><h2>7. Contact</h2><p><a href="mailto:hello@stoneyleepress.com">hello@stoneyleepress.com</a></p>' },
+    applynex: { title: 'Terms of Service', product: 'ApplyNex (applynex.ai) · Effective April 9, 2026', body: '<h2>1. Service Description</h2><p>ApplyNex is an AI-powered job search and application management platform including resume tailoring, cover letter generation, ATS scoring, interview prep, and tracking.</p><h2>2. Free & Pro Tiers</h2><p>ApplyNex offers a free tier and Pro at $15/month with a 3-day trial. Subscriptions auto-renew unless cancelled.</p><h2>3. Refunds</h2><p>Refund requests within 7 days of purchase are considered case-by-case. Contact <a href="mailto:hello@applynex.ai">hello@applynex.ai</a>.</p><h2>4. AI Content</h2><p>AI-generated content is a starting point. You are responsible for reviewing all output before submitting to employers. ApplyNex does not guarantee employment outcomes.</p><h2>5. Termination</h2><p>We reserve the right to suspend accounts that violate these terms or abuse the AI system.</p>' },
+    forkcast: { title: 'Terms of Service', product: 'ForkCast iOS App · Effective April 9, 2026', body: '<h2>1. Service Description</h2><p>ForkCast is an iOS app for recipe management, nutrition tracking, and AI meal planning. Available for $1.99 one-time with optional ForkCast Pro at $9.99/year.</p><h2>2. Not Medical Advice</h2><p>ForkCast is not a medical device. All nutrition information is for informational purposes only. Consult a healthcare provider for medical decisions.</p><h2>3. Subscriptions</h2><p>In-app purchases are processed through Apple. ForkCast Pro includes a 14-day free trial; cancel before trial ends to avoid charges.</p><h2>4. User Content</h2><p>Recipes and diary entries are your property. AI features require a limited license to process your content on your behalf.</p>' },
+    rantlogic: { title: 'Terms of Service', product: 'RantLogic iOS App · Effective April 9, 2026', body: '<h2>1. Service Description</h2><p>RantLogic converts spoken or typed input into Apple Shortcuts files, delivered via the iOS share sheet in compliance with App Store guidelines (2.5.2).</p><h2>2. Automation Output</h2><p>You are solely responsible for reviewing and deciding whether to install any generated Shortcut. We do not guarantee automations will function on all iOS versions.</p><h2>3. Acceptable Use</h2><p>You may not use RantLogic to generate automations intended to harm, defraud, or surveil others.</p><h2>4. AI Disclaimer</h2><p>Automation logic is AI-generated and may contain errors. Always review a Shortcut before running it. Stoney Lee Press LLC is not liable for unintended consequences of installed automations.</p>' }
+  }
+};
+function openLegal(type, product) {
+  const data = LEGAL[type]?.[product] || LEGAL[type]?.general;
+  if (!data) return;
+  document.getElementById('legal-title').textContent = data.title;
+  document.getElementById('legal-product').textContent = data.product;
+  document.getElementById('legal-body').innerHTML = data.body;
+  document.getElementById('legal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLegal() { document.getElementById('legal-overlay').classList.remove('active'); document.body.style.overflow = ''; }
+function closeLegalOnBg(e) { if (e.target === document.getElementById('legal-overlay')) closeLegal(); }
+function openFeedback() { document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }); }
+async function submitFeedback() {
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const product = document.getElementById('f-product').value;
+  const type = document.getElementById('f-type').value;
+  const message = document.getElementById('f-message').value.trim();
+  if (!name || !email || !message) { alert('Please fill in your name, email, and message.'); return; }
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ name, email, product, type, message }) });
+    if (res.ok) { document.getElementById('feedback-form').style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
+    else { throw new Error('failed'); }
+  } catch(err) {
+    const subject = encodeURIComponent('[' + (product||'General') + '] ' + (type||'Feedback'));
+    const body = encodeURIComponent('Name: ' + name + '\n\n' + message);
+    window.location.href = 'mailto:hello@stoneyleepress.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'Send Message'; btn.disabled = false;
+  }
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLegal(); });
+</script>
+</body>
+</html>
