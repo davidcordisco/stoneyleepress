@@ -299,7 +299,7 @@ async function submitFeedback() {
   const btn = document.querySelector('.form-submit');
   btn.textContent = 'Sending...'; btn.disabled = true;
   try {
-    const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ name, email, product, type, message }) });
+    const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ name, email, product, type, message }) });
     if (res.ok) { document.getElementById('feedback-form').style.display = 'none'; document.getElementById('form-success').style.display = 'block'; }
     else { throw new Error('failed'); }
   } catch(err) {
