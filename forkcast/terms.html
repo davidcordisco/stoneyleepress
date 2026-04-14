@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ForkCast — Terms of Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink: #0a0a0f; --paper: #f5f2eb; --gold: #c9a84c; --gold-dim: #a08030; --muted: #6b6558; --border: rgba(201,168,76,0.2); --border-soft: rgba(0,0,0,0.08); --forkcast: #34d399; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--ink); color: var(--paper); font-family: 'DM Mono', monospace; font-size: 14px; line-height: 1.7; overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(10,10,15,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; }
+    .nav-back { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 8px; }
+    .nav-back:hover { color: var(--paper); }
+    .nav-back::before { content: '←'; }
+    main { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; padding: 120px 48px 80px; animation: fadeUp 0.5s ease both; }
+    .eyebrow { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--forkcast); margin-bottom: 12px; }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 56px); font-weight: 300; color: var(--paper); margin-bottom: 8px; line-height: 1.1; }
+    .page-meta { font-size: 11px; color: var(--muted); margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .body h2 { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600; color: var(--paper); margin: 36px 0 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .body p, .body li { font-size: 13px; color: rgba(245,242,235,0.6); line-height: 1.9; margin-bottom: 12px; }
+    .body ul { padding-left: 20px; margin-bottom: 12px; }
+    .body a { color: var(--gold); text-decoration: none; }
+    .body a:hover { text-decoration: underline; }
+    footer { border-top: 1px solid var(--border-soft); padding: 40px 48px; text-align: center; position: relative; z-index: 1; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 12px; }
+    .footer-legal { font-size: 11px; color: rgba(107,101,88,0.6); }
+    .footer-legal a { color: var(--muted); text-decoration: none; }
+    .footer-legal a:hover { color: var(--paper); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 768px) { nav { padding: 16px 24px; } main { padding: 100px 24px 60px; } footer { padding: 32px 24px; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="https://stoneyleepress.com">Stoney Lee Press</a>
+  <a class="nav-back" href="https://stoneyleepress.com">Back</a>
+</nav>
+<main>
+  <div class="eyebrow">ForkCast iOS App</div>
+  <h1 class="page-title">Terms of Service</h1>
+  <p class="page-meta">Stoney Lee Press LLC &nbsp;&middot;&nbsp; Effective April 9, 2026</p>
+  <div class="body">
+    <h2>1. Service Description</h2>
+    <p>ForkCast is an iOS app for recipe management, nutrition tracking, and AI meal planning. Available for $1.99 one-time with optional ForkCast Pro at $9.99/year.</p>
+    <h2>2. Not Medical Advice</h2>
+    <p>ForkCast is not a medical device. All nutrition information is for informational purposes only. Consult a healthcare provider for medical decisions.</p>
+    <h2>3. Subscriptions</h2>
+    <p>In-app purchases are processed through Apple. ForkCast Pro includes a 14-day free trial; cancel before trial ends to avoid charges.</p>
+    <h2>4. User Content</h2>
+    <p>Recipes and diary entries are your property. AI features require a limited license to process your content on your behalf.</p>
+  </div>
+</main>
+<footer>
+  <div class="footer-logo">Stoney Lee Press</div>
+  <div class="footer-legal">
+    &copy; 2026 Stoney Lee Press LLC &nbsp;&middot;&nbsp;
+    <a href="/forkcast/privacy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+    <a href="https://stoneyleepress.com">stoneyleepress.com</a>
+  </div>
+</footer>
+</body>
+</html>
