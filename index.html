@@ -20,6 +20,7 @@
       --forkcast: #34d399;
       --rantlogic: #5E5CE6;
       --stoney: #c9a84c;
+      --serveall: #c8102e;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -57,11 +58,13 @@
     .product-card.forkcast { --accent-color: var(--forkcast); }
     .product-card.rantlogic { --accent-color: var(--rantlogic); }
     .product-card.stoney { --accent-color: var(--stoney); }
+    .product-card.serveall { --accent-color: var(--serveall); }
     .product-tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 8px; border: 1px solid; margin-bottom: 20px; }
     .product-card.applynex .product-tag { color: var(--applynex); border-color: rgba(201,168,76,0.3); }
     .product-card.forkcast .product-tag { color: var(--forkcast); border-color: rgba(52,211,153,0.3); }
     .product-card.rantlogic .product-tag { color: var(--rantlogic); border-color: rgba(94,92,230,0.3); }
     .product-card.stoney .product-tag { color: var(--stoney); border-color: rgba(201,168,76,0.3); }
+    .product-card.serveall .product-tag { color: var(--serveall); border-color: rgba(200,16,46,0.3); }
     .product-name { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: var(--paper); margin-bottom: 10px; }
     .product-desc { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
     .product-links { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -189,6 +192,15 @@
         <a href="#" onclick="openLegal('copyright','book'); return false;" class="product-link">Copyright</a>
       </div>
     </div>
+    <div class="product-card serveall">
+      <img src="assets/serveall-logo.png" alt="ServeALL" style="width:100%;max-width:360px;border-radius:8px;margin-bottom:16px;display:block;" />
+      <div class="product-tag">Nonprofit Intelligence &middot; Coming Soon</div>
+      <div class="product-name">ServeALL</div>
+      <div class="product-desc">Strategic intelligence for nonprofits. The reporting and intelligence layer that unifies accounting, donor CRM, payment platforms, and email tools into board-ready dashboards, AI-generated meeting minutes, and a searchable institutional memory vault. Never processes payments. Never replaces your CRM. Reads from the tools you already use.</div>
+      <div class="product-links">
+        <a href="mailto:hello@serveall.foundation" class="product-link" style="color:var(--serveall);">Get Notified</a>
+      </div>
+    </div>
   </div>
 </section>
 <div class="section-divider" style="max-width:1100px;margin:0 auto;"></div>
@@ -196,7 +208,7 @@
   <div class="section-label">Press Kit</div>
   <h2 class="section-title">About the Founder</h2>
   <div class="press-grid">
-    <div class="press-card"><div class="press-stat">4</div><div class="press-label">Products in market</div></div>
+    <div class="press-card"><div class="press-stat">5</div><div class="press-label">Products in market</div></div>
     <div class="press-card"><div class="press-stat">15+</div><div class="press-label">Years in tech &amp; sales</div></div>
     <div class="press-card"><div class="press-stat">2024</div><div class="press-label">Studio founded</div></div>
   </div>
