@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-label="ApplyNex">
+  <rect width="720" height="540" fill="#0f0f0f"/>
+  <rect x="12" y="12" width="696" height="516" fill="none" stroke="#c9a84c" stroke-width="2" opacity="0.4"/>
+  <text x="360" y="255" text-anchor="middle" font-family="Syne, Georgia, serif" font-size="96" font-weight="700" fill="#f4f1ea">
+    <tspan fill="#f4f1ea">Apply</tspan><tspan fill="#c9a84c">Nex</tspan>
+  </text>
+  <text x="360" y="335" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="22" letter-spacing="6" fill="#c9a84c" opacity="0.85">
+    AI JOB SEARCH PLATFORM
+  </text>
+</svg>
