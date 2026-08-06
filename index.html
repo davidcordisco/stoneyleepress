@@ -21,6 +21,7 @@
       --rantlogic: #5E5CE6;
       --stoney: #c9a84c;
       --serveall: #c8102e;
+      --silence: #5B7C99;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -59,12 +60,14 @@
     .product-card.rantlogic { --accent-color: var(--rantlogic); }
     .product-card.stoney { --accent-color: var(--stoney); }
     .product-card.serveall { --accent-color: var(--serveall); }
+    .product-card.silence { --accent-color: var(--silence); }
     .product-tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 8px; border: 1px solid; margin-bottom: 20px; }
     .product-card.applynex .product-tag { color: var(--applynex); border-color: rgba(201,168,76,0.3); }
     .product-card.forkcast .product-tag { color: var(--forkcast); border-color: rgba(52,211,153,0.3); }
     .product-card.rantlogic .product-tag { color: var(--rantlogic); border-color: rgba(94,92,230,0.3); }
     .product-card.stoney .product-tag { color: var(--stoney); border-color: rgba(201,168,76,0.3); }
     .product-card.serveall .product-tag { color: var(--serveall); border-color: rgba(200,16,46,0.3); }
+    .product-card.silence .product-tag { color: var(--silence); border-color: rgba(91,124,153,0.3); }
     .product-name { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: var(--paper); margin-bottom: 10px; }
     .product-desc { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
     .product-links { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -194,6 +197,15 @@
         <a href="https://books.apple.com" target="_blank" class="product-link" style="color:var(--stoney);">Apple Books</a>
         <a href="#press" class="product-link">Press Kit</a>
         <a href="#" onclick="openLegal('copyright','book'); return false;" class="product-link">Copyright</a>
+      </div>
+    </div>
+    <div class="product-card silence">
+      <img src="assets/silence-logo.jpg" alt="The Other Side of Silence" style="width:100%;max-width:360px;border-radius:8px;margin-bottom:16px;display:block;" />
+      <div class="product-tag">Novel &middot; Literary Fiction &middot; Coming Soon</div>
+      <div class="product-name">The Other Side of Silence</div>
+      <div class="product-desc">A year after her father&rsquo;s death, investigative journalist Hailey Mackenzie returns home for his memorial and finds his unfinished journal &mdash; a single line that reads &ldquo;It ends with me.&rdquo; As she and her sister help their mother let go of the past, Hailey is drawn into the silences her father left behind, and into the inheritance every family carries but rarely names.</div>
+      <div class="product-links">
+        <a href="mailto:hello@stoneyleepress.com" class="product-link" style="color:var(--silence);">Get Notified</a>
       </div>
     </div>
     <div class="product-card serveall">
