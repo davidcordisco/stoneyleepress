@@ -34,6 +34,7 @@
     .nav-links a:hover { color: var(--paper); }
     .hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 48px 80px; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%), radial-gradient(ellipse 30% 40% at 20% 80%, rgba(94,92,230,0.05) 0%, transparent 60%), radial-gradient(ellipse 25% 30% at 80% 20%, rgba(52,211,153,0.04) 0%, transparent 60%); }
+    .hero-mascot { display: block; max-height: 120px; width: auto; margin: 0 auto 20px; animation: fadeDown 1s ease both; }
     .hero-rule { width: 1px; height: 60px; background: linear-gradient(to bottom, transparent, var(--gold)); margin: 0 auto 32px; animation: fadeDown 1s ease both; }
     .hero-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; animation: fadeUp 0.8s ease 0.2s both; }
     .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 8vw, 96px); font-weight: 300; line-height: 1.0; letter-spacing: -0.01em; color: var(--paper); margin-bottom: 8px; animation: fadeUp 0.8s ease 0.3s both; }
@@ -139,6 +140,7 @@
 </nav>
 <div id="top" class="hero">
   <div class="hero-bg"></div>
+  <img class="hero-mascot" src="assets/stoneyleepress-mascot.png" alt="Stoney Lee Press mascot" />
   <div class="hero-rule"></div>
   <div class="hero-eyebrow">Ridgefield, Connecticut &middot; Est. 2024</div>
   <h1 class="hero-title">Stoney Lee<br /><em>Press LLC</em></h1>
