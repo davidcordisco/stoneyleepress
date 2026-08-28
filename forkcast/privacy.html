@@ -42,42 +42,46 @@
 <main>
   <div class="eyebrow">ForkCast iOS App</div>
   <h1 class="page-title">Privacy Policy</h1>
-  <p class="page-meta">Last updated: March 30, 2026</p>
+  <p class="page-meta">Last updated: August 28, 2026</p>
   <div class="body">
     <h2>Overview</h2>
     <p>ForkCast is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use the ForkCast app. By using ForkCast, you agree to the practices described in this policy.</p>
     <h2>Data We Collect</h2>
-    <p>ForkCast collects only the minimum data necessary to provide its features:</p>
+    <p>ForkCast collects only the data necessary to provide its features:</p>
     <ul>
+      <li>Account information — to create a ForkCast account, we collect your email address and password via Firebase Authentication, and an optional display name. Your password is managed by Firebase and is never visible to us in plain text.</li>
       <li>Recipes and meal plans you create or save — stored locally on your device and synced via iCloud to your other Apple devices.</li>
       <li>Pantry items, shopping lists, and food diary entries — stored locally and synced via iCloud.</li>
-      <li>Camera and photo library access — used only when you choose to scan a recipe or food item. Images are processed on-device or sent to our AI service for recipe generation. We do not store your photos.</li>
+      <li>Photos you choose to scan — used for Smart Scan (plate and food photos), Cook From What I Have (fridge/pantry photos), Dough Studio (bulk fermentation photos), and recipe import. These photos are sent to Anthropic, our AI provider, for analysis, and are not stored by ForkCast or Anthropic beyond what's needed to process your request. See "Third-Party Services" below.</li>
       <li>Microphone access — used only for voice control in Cook Mode. Voice data is processed locally and never transmitted or stored.</li>
       <li>Speech recognition — used for hands-free cooking commands. Audio is processed on-device.</li>
-      <li>AI-generated content — when you use AI features, your prompts are sent to our Firebase proxy and processed by an AI service. We do not store these prompts or associate them with your identity.</li>
+      <li>AI-generated content — when you use AI features such as recipe generation, ingredient substitutions, Smart Scan, or GLP-1 coaching, your prompts and any photos you provide are sent through our Firebase proxy to Anthropic for processing. We do not associate these requests with your identity beyond what's needed to return a response to your device.</li>
     </ul>
     <h2>iCloud and Data Sync</h2>
     <p>ForkCast uses Apple iCloud to sync your recipes, pantry, meal plans, and food diary across your Apple devices. iCloud data is governed by Apple's Privacy Policy at apple.com/privacy. We do not have access to your iCloud data.</p>
     <h2>Third-Party Services</h2>
     <p>ForkCast uses the following third-party services:</p>
     <ul>
-      <li>Firebase by Google — used to host our AI proxy functions. Firebase may collect anonymized usage and diagnostic data.</li>
+      <li>Anthropic — powers ForkCast's AI features, including recipe generation, ingredient substitutions, Smart Scan, Cook From What I Have, Dough Studio photo analysis, and GLP-1 coaching. When you use these features, your prompts and any photos you provide are sent to Anthropic for processing. See <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>.</li>
+      <li>Firebase by Google — hosts the proxy that relays requests to Anthropic and may collect anonymized usage and diagnostic data.</li>
       <li>EDAMAM Nutrition API — used to look up nutritional information. Queries include ingredient names only, with no personally identifiable information.</li>
       <li>Apple CloudKit — used for iCloud sync as described above.</li>
     </ul>
     <p>We do not use advertising networks, sell your data to third parties, or share your personal information beyond what is described above.</p>
-    <h2>Data We Do NOT Collect</h2>
+    <h2>What We Don't Do With Your Data</h2>
     <ul>
-      <li>We do not collect your name, email address, or any account information.</li>
-      <li>We do not track you across apps or websites.</li>
-      <li>We do not use advertising identifiers.</li>
       <li>We do not sell, rent, or trade your data.</li>
+      <li>We do not use advertising networks or advertising identifiers.</li>
+      <li>We do not track you across other apps or websites.</li>
       <li>We do not collect precise or coarse location data.</li>
+      <li>We do not store the photos you scan after they've been processed.</li>
     </ul>
     <h2>Children's Privacy</h2>
     <p>ForkCast is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
     <h2>Data Retention and Deletion</h2>
-    <p>All your recipes, pantry items, meal plans, and food diary entries are stored in your iCloud account and on your device. You can delete any data at any time from within the app. To delete all your data, delete the app from your device and clear your ForkCast iCloud data in Settings &rarr; your name &rarr; iCloud &rarr; Manage Storage.</p>
+    <p>Your recipes, pantry items, meal plans, and food diary entries are stored in your iCloud account and on your device. You can delete individual items at any time from within the app.</p>
+    <p>To delete your entire ForkCast account and all associated data, go to Settings &rarr; Data &rarr; Delete Account. This permanently deletes your account and cannot be undone.</p>
+    <p>If you'd like a copy of your data before deleting, use Settings &rarr; Data &rarr; Download My Data.</p>
     <h2>Security</h2>
     <p>We take reasonable measures to protect your information. All data synced via iCloud is encrypted by Apple in transit and at rest. AI requests are sent over HTTPS to our Firebase proxy.</p>
     <h2>Changes to This Policy</h2>
