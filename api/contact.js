@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${RESEND_KEY}` },
     body: JSON.stringify({
       from: 'Stoney Lee Press <noreply@stoneyleepress.com>',
-      to: 'hello@stoneyleepress.com',
+      to: 'dcordisco@stoneyleepress.com',
       reply_to: email,
       subject: `[${product || 'General'}] ${type || 'Contact'} from ${name}`,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Product:</strong> ${product}</p><p><strong>Type:</strong> ${type}</p><hr/><p>${message.replace(/\n/g, '<br/>')}</p>`
