@@ -18,6 +18,7 @@
       --border-soft: rgba(0,0,0,0.08);
       --applynex: #c9a84c;
       --forkcast: #34d399;
+      --meetingiq: #4A9DE0;
       --rantlogic: #5E5CE6;
       --stoney: #c9a84c;
       --serveall: #c8102e;
@@ -57,6 +58,7 @@
     .product-card:hover { background: rgba(255,255,255,0.04); }
     .product-card.applynex { --accent-color: var(--applynex); }
     .product-card.forkcast { --accent-color: var(--forkcast); }
+    .product-card.meetingiq { --accent-color: var(--meetingiq); }
     .product-card.rantlogic { --accent-color: var(--rantlogic); }
     .product-card.stoney { --accent-color: var(--stoney); }
     .product-card.serveall { --accent-color: var(--serveall); }
@@ -64,6 +66,7 @@
     .product-tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 8px; border: 1px solid; margin-bottom: 20px; }
     .product-card.applynex .product-tag { color: var(--applynex); border-color: rgba(201,168,76,0.3); }
     .product-card.forkcast .product-tag { color: var(--forkcast); border-color: rgba(52,211,153,0.3); }
+    .product-card.meetingiq .product-tag { color: var(--meetingiq); border-color: rgba(74,157,224,0.3); }
     .product-card.rantlogic .product-tag { color: var(--rantlogic); border-color: rgba(94,92,230,0.3); }
     .product-card.stoney .product-tag { color: var(--stoney); border-color: rgba(201,168,76,0.3); }
     .product-card.serveall .product-tag { color: var(--serveall); border-color: rgba(200,16,46,0.3); }
@@ -176,6 +179,15 @@
         <a href="https://apps.apple.com/app/forkcast-recipes-nutrition/id6761390308" target="_blank" class="product-link" style="color:var(--forkcast);">App Store</a>
         <a href="#" onclick="openLegal('privacy','forkcast'); return false;" class="product-link">Privacy Policy</a>
         <a href="#" onclick="openLegal('terms','forkcast'); return false;" class="product-link">Terms</a>
+      </div>
+    </div>
+    <div class="product-card meetingiq">
+      <img src="assets/meetingiq-logo.png" alt="MeetingIQ" style="width:100%;max-width:360px;border-radius:8px;margin-bottom:16px;display:block;" />
+      <div class="product-tag">Web App &middot; Productivity</div>
+      <div class="product-name">MeetingIQ</div>
+      <div class="product-desc">Record or upload meetings and get a transcript, summary, action items, and decisions &mdash; then ask questions about what was discussed, live or after the fact.</div>
+      <div class="product-links">
+        <a href="https://usemeetingiq.vercel.app" target="_blank" class="product-link" style="color:var(--meetingiq);">usemeetingiq.vercel.app</a>
       </div>
     </div>
     <div class="product-card rantlogic">
