@@ -23,6 +23,7 @@
       --stoney: #c9a84c;
       --serveall: #c8102e;
       --silence: #5B7C99;
+      --faircopy: #A8432A;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -63,6 +64,7 @@
     .product-card.stoney { --accent-color: var(--stoney); }
     .product-card.serveall { --accent-color: var(--serveall); }
     .product-card.silence { --accent-color: var(--silence); }
+    .product-card.faircopy { --accent-color: var(--faircopy); }
     .product-tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 8px; border: 1px solid; margin-bottom: 20px; }
     .product-card.applynex .product-tag { color: var(--applynex); border-color: rgba(201,168,76,0.3); }
     .product-card.forkcast .product-tag { color: var(--forkcast); border-color: rgba(52,211,153,0.3); }
@@ -71,6 +73,7 @@
     .product-card.stoney .product-tag { color: var(--stoney); border-color: rgba(201,168,76,0.3); }
     .product-card.serveall .product-tag { color: var(--serveall); border-color: rgba(200,16,46,0.3); }
     .product-card.silence .product-tag { color: var(--silence); border-color: rgba(91,124,153,0.3); }
+    .product-card.faircopy .product-tag { color: var(--faircopy); border-color: rgba(168,67,42,0.3); }
     .product-name { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: var(--paper); margin-bottom: 10px; }
     .product-desc { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
     .product-links { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -231,6 +234,15 @@
         <a href="mailto:hello@serveall.foundation" class="product-link" style="color:var(--serveall);">Get Notified</a>
       </div>
     </div>
+    <div class="product-card faircopy">
+      <img src="assets/faircopy-logo.png" alt="FairCopy" style="width:100%;max-width:360px;border-radius:8px;margin-bottom:16px;display:block;" />
+      <div class="product-tag">Web App &middot; Coming Soon</div>
+      <div class="product-name">FairCopy</div>
+      <div class="product-desc">A manuscript editor for authors and editors: upload a draft, run it chapter by chapter through a prompt library of developmental and line edits, and review every change as an accept/reject diff before it's folded into the master document.</div>
+      <div class="product-links">
+        <a href="mailto:dcordisco@stoneyleepress.com?subject=FairCopy%20-%20Get%20Notified" class="product-link" style="color:var(--faircopy);">Get Notified</a>
+      </div>
+    </div>
   </div>
 </section>
 <div class="section-divider" style="max-width:1100px;margin:0 auto;"></div>
@@ -238,7 +250,7 @@
   <div class="section-label">Press Kit</div>
   <h2 class="section-title">About the Founder</h2>
   <div class="press-grid">
-    <div class="press-card"><div class="press-stat">7</div><div class="press-label">Products in market</div></div>
+    <div class="press-card"><div class="press-stat">8</div><div class="press-label">Products in market</div></div>
     <div class="press-card"><div class="press-stat">15+</div><div class="press-label">Years in tech &amp; sales</div></div>
     <div class="press-card"><div class="press-stat">2024</div><div class="press-label">Studio founded</div></div>
   </div>
