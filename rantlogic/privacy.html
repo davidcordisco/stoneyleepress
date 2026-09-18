@@ -42,33 +42,27 @@
 <main>
   <div class="eyebrow">Rant to Logic iOS App</div>
   <h1 class="page-title">Privacy Policy</h1>
-  <p class="page-meta">Last updated: April 24, 2026</p>
+  <p class="page-meta">Last updated: September 15, 2026</p>
   <div class="body">
     <h2>Introduction</h2>
     <p>Rant to Logic is developed and published by Stoney Lee Press LLC ("we," "us," or "our"). This Privacy Policy explains how we collect, use, and protect your information when you use the app. By using Rant to Logic, you agree to the practices described in this policy.</p>
 
     <h2>Information We Collect</h2>
-    <p>We collect the following types of information:</p>
+    <p>The app works with very little information:</p>
     <ul>
-      <li>Account information: your email address and password, used to create and authenticate your account.</li>
-      <li>Rant content: the text you type or speak into the app, which is processed to generate Apple Shortcuts and personal automations.</li>
-      <li>Voice input: if you choose to speak your rant instead of typing it, your device records short audio that is transcribed to text. See "Voice Input" below for details.</li>
-      <li>App-stored content: the rants and Logic you create are saved to your device locally so you can re-install, re-run, or reference them later.</li>
+      <li>No account: the app has no sign-in and never asks for your email address, name, or a password.</li>
+      <li>Rant content: the text you type or speak. It is sent to our shortcut-generation service (and on to Anthropic's Claude API) only to build the shortcut or automation you asked for — see "Third-Party Services" below.</li>
+      <li>Voice input: if you speak your rant instead of typing it, your device records short audio that is transcribed to text. See "Voice Input" below.</li>
+      <li>Rants and Logic you create: saved on your device so you can re-install, re-run, or reference them. They are not stored on any server.</li>
     </ul>
-    <p>We do not collect location data, contacts, health data, payment information, or any other personal data beyond what is listed above. Apple handles the payment details for your in-app purchase — we never see your credit card information.</p>
+    <p>We do not collect location, contacts, health data, payment information, or analytics identifiers. Apple handles payment for the in-app purchase — we never see your card details. We don't profile you, run analytics, or sell or share data. Two things leave your device. The rant text itself, sent to generate your shortcut. And, only if you open the step-by-step help chat inside an automation guide, the question you type there — sent to the same service, with the guide's instructions for that step, to answer it. Neither is kept by us. If you use a third-party keyboard with Full Access enabled, that keyboard may have its own access to what you type, independent of this app.</p>
 
     <h2>How We Use Your Information</h2>
-    <p>We use the information we collect to:</p>
-    <ul>
-      <li>Authenticate your account and maintain your session.</li>
-      <li>Process your rants and generate Apple Shortcuts and personal automations.</li>
-      <li>Respond to support requests sent to <a href="mailto:stoneyleepress@gmail.com">stoneyleepress@gmail.com</a>.</li>
-      <li>Improve the app experience based on how the app is used.</li>
-    </ul>
-    <p>We do not sell your data to anyone, ever. We do not share your data with advertisers. We do not use your rants to train AI models.</p>
+    <p>We use rant text solely to generate your shortcut or automation. We do not maintain user accounts or profiles, do not sell or share your data with advertisers, and do not use your rants to train AI models.</p>
 
     <h2>Voice Input</h2>
-    <p>When you use voice entry, your device records audio and converts it to text using Apple's Speech Recognition framework. Depending on your iPhone model and iOS settings, this speech recognition may happen entirely on your device, or Apple may process the audio on its servers. Apple's handling of voice data is governed by Apple's Privacy Policy at <a href="https://apple.com/privacy">apple.com/privacy</a>. Once the audio is transcribed, we treat the resulting text as rant content per this policy. We do not store your raw audio.</p>
+    <p>Speaking a rant: your device converts your voice to text as you talk, using Apple's Speech Recognition framework. Depending on your iPhone model and iOS settings, this speech recognition may happen entirely on your device, or Apple may process the audio on its servers. Apple's handling of voice data is governed by Apple's Privacy Policy at <a href="https://apple.com/privacy">apple.com/privacy</a>. The audio is not saved; only the resulting text is kept, and we treat it as rant content per this policy.</p>
+    <p>Voice memo notes: the audio is saved as part of the note, only on this iPhone. It is excluded from iCloud and device backups and never uploaded — not to us, not to Anthropic, and not to Apple. If your iPhone can recognize speech on-device, a transcript is made on the device and saved with the note; if it can't, the memo stays audio-only rather than being sent anywhere to be transcribed. The audio and transcript are deleted when you delete the note or use Settings → Erase All Data.</p>
 
     <h2>Third-Party Services</h2>
     <p>Rant to Logic integrates with the following third-party services. Your use of the app is subject to their respective privacy policies:</p>
@@ -80,26 +74,24 @@
     </ul>
 
     <h2>Data Storage and Security</h2>
-    <p>Your account credentials are stored securely on your device. Your rants and Logic are saved locally on your device — they are yours.</p>
-    <p>Rant content is transmitted to our backend server to generate your automation. We may temporarily log requests for debugging and abuse prevention. These logs are rotated and deleted on a regular schedule and are not maintained as a permanent database of user rants. Logs are accessible only to the app's developers.</p>
-    <p>We take reasonable technical and organizational measures to protect your data in transit and at rest. No system is perfectly secure, and we cannot guarantee absolute protection against unauthorized access. We encourage you to use a strong, unique password for your account.</p>
+    <p>Your rants and Logic are stored on your device using standard iOS storage. There are no accounts.</p>
+    <p>Rant text is transmitted to our shortcut-generation service to build your automation. We may briefly log requests (traffic metadata) for debugging and abuse prevention; these logs are rotated and deleted regularly and are not a permanent database of user rants.</p>
+    <p>We take reasonable technical and organizational measures to protect your data in transit and at rest. No system is perfectly secure, and we cannot guarantee absolute protection against unauthorized access.</p>
 
     <h2>Data Retention</h2>
-    <p>We retain your account information for as long as your account is active. If you delete your account through the app, all locally stored data is permanently removed from your device and your account credentials are removed from our authentication system.</p>
-    <p>Temporary backend logs of rant content are retained for a short period (generally less than 30 days) for debugging and abuse prevention, then automatically deleted.</p>
+    <p>Your rants stay on your device until you delete them — individually, or all at once via Settings → Erase All Data. We do not hold copies.</p>
+    <p>Temporary backend logs of rant traffic are retained briefly (generally under 30 days), then automatically deleted.</p>
     <p>Anthropic's retention of rant content sent through their API is governed by their own policies, generally up to 30 days for trust and safety review.</p>
 
     <h2>Your Rights</h2>
-    <p>You have the right to:</p>
+    <p>Because all of your data is on your device:</p>
     <ul>
-      <li>Access a copy of the personal information we hold about you.</li>
-      <li>Correct inaccurate personal information.</li>
-      <li>Delete your account and all associated locally stored data at any time through the app.</li>
-      <li>Request deletion of any server-side account records.</li>
-      <li>Withdraw consent for data processing (which will require you to stop using the app).</li>
+      <li>You can view every rant and Logic directly in the app.</li>
+      <li>You can edit or delete any rant at any time.</li>
+      <li>You can erase everything — every rant and your Pro status on this device — from Settings → Erase All Data.</li>
     </ul>
-    <p>To exercise any of these rights, email <a href="mailto:stoneyleepress@gmail.com">stoneyleepress@gmail.com</a>. We will respond within 30 days.</p>
-    <p>If you are a resident of the European Union, the United Kingdom, or California, you may have additional rights under applicable privacy law (GDPR, UK GDPR, CCPA). Contact us at the email above to exercise them.</p>
+    <p>We hold no server-side profile to access, correct, or delete. For questions, email <a href="mailto:stoneyleepress@gmail.com">stoneyleepress@gmail.com</a>; we respond within 30 days.</p>
+    <p>If you are a resident of the EU, UK, or California, you may have additional rights under GDPR, UK GDPR, or CCPA. Because we do not maintain server-side personal data, most such requests are satisfied by the on-device controls above.</p>
 
     <h2>Children's Privacy</h2>
     <p>Rant to Logic is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately and we will delete it.</p>
