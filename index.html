@@ -24,6 +24,7 @@
       --serveall: #c8102e;
       --silence: #5B7C99;
       --faircopy: #A8432A;
+      --pieces: #C98F5E;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -65,6 +66,7 @@
     .product-card.serveall { --accent-color: var(--serveall); }
     .product-card.silence { --accent-color: var(--silence); }
     .product-card.faircopy { --accent-color: var(--faircopy); }
+    .product-card.pieces { --accent-color: var(--pieces); }
     .product-tag { display: inline-block; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 8px; border: 1px solid; margin-bottom: 20px; }
     .product-card.applynex .product-tag { color: var(--applynex); border-color: rgba(201,168,76,0.3); }
     .product-card.forkcast .product-tag { color: var(--forkcast); border-color: rgba(52,211,153,0.3); }
@@ -74,6 +76,7 @@
     .product-card.serveall .product-tag { color: var(--serveall); border-color: rgba(200,16,46,0.3); }
     .product-card.silence .product-tag { color: var(--silence); border-color: rgba(91,124,153,0.3); }
     .product-card.faircopy .product-tag { color: var(--faircopy); border-color: rgba(168,67,42,0.3); }
+    .product-card.pieces .product-tag { color: var(--pieces); border-color: rgba(201,143,94,0.3); }
     .product-name { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: var(--paper); margin-bottom: 10px; }
     .product-desc { font-size: 12px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; }
     .product-links { display: flex; gap: 16px; flex-wrap: wrap; }
@@ -225,6 +228,15 @@
         <a href="mailto:dcordisco@stoneyleepress.com" class="product-link" style="color:var(--silence);">Get Notified</a>
       </div>
     </div>
+    <div class="product-card pieces">
+      <img src="assets/pieces-logo.jpg" alt="Pieces of the Whole" style="width:100%;max-width:360px;border-radius:8px;margin-bottom:16px;display:block;" />
+      <div class="product-tag">Novella &middot; Literary Fiction &middot; Coming Soon</div>
+      <div class="product-name">Pieces of the Whole</div>
+      <div class="product-desc">A new novella from Stoney Lee Press LLC. Jacket copy and release details to follow.</div>
+      <div class="product-links">
+        <a href="mailto:dcordisco@stoneyleepress.com?subject=Pieces%20of%20the%20Whole%20-%20Get%20Notified" class="product-link" style="color:var(--pieces);">Get Notified</a>
+      </div>
+    </div>
     <div class="product-card serveall">
       <img src="assets/serveall-logo.png" alt="ServeALL" style="width:100%;max-width:360px;border-radius:8px;margin-bottom:16px;display:block;" />
       <div class="product-tag">Nonprofit Intelligence &middot; Coming Soon</div>
@@ -250,7 +262,7 @@
   <div class="section-label">Press Kit</div>
   <h2 class="section-title">About the Founder</h2>
   <div class="press-grid">
-    <div class="press-card"><div class="press-stat">8</div><div class="press-label">Products in market</div></div>
+    <div class="press-card"><div class="press-stat">9</div><div class="press-label">Products in market</div></div>
     <div class="press-card"><div class="press-stat">15+</div><div class="press-label">Years in tech &amp; sales</div></div>
     <div class="press-card"><div class="press-stat">2024</div><div class="press-label">Studio founded</div></div>
   </div>
@@ -290,7 +302,7 @@
           <div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" id="f-name" placeholder="Your name" /></div>
           <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="f-email" placeholder="you@email.com" /></div>
         </div>
-        <div class="form-group"><label class="form-label">Product</label><select class="form-select" id="f-product"><option value="">Select a product...</option><option value="applynex">ApplyNex</option><option value="forkcast">ForkCast</option><option value="rantlogic">RantLogic</option><option value="book">The Other Side of Me</option><option value="general">General / Other</option></select></div>
+        <div class="form-group"><label class="form-label">Product</label><select class="form-select" id="f-product"><option value="">Select a product...</option><option value="applynex">ApplyNex</option><option value="forkcast">ForkCast</option><option value="rantlogic">RantLogic</option><option value="book">The Other Side of Me</option><option value="pieces">Pieces of the Whole</option><option value="general">General / Other</option></select></div>
         <div class="form-group"><label class="form-label">Type</label><select class="form-select" id="f-type"><option value="feedback">Feedback</option><option value="support">Support Request</option><option value="press">Press Inquiry</option><option value="business">Business</option><option value="other">Other</option></select></div>
         <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" id="f-message" placeholder="Tell us what's on your mind..."></textarea></div>
         <button class="form-submit" onclick="submitFeedback()">Send Message</button>
